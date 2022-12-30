@@ -1,0 +1,5 @@
+{
+    "key": "your API key",
+    "url": "https://api.apilayer.com/exchangerates_data/convert",
+    "address": ":3000"
+}
