@@ -20,7 +20,8 @@ func New(endpoint string) *Client {
 }
 
 func (c *Client) ConvertCurrency(ctx context.Context, from, to string, amount float64) (*types.ConvertResponse, error) {
-	req, err := http.NewRequest("GET", c.endpoint, nil)
+	query := fmt.Sprintf("%s?from=%s&to=%s&amount=%f", c.endpoint, from, to, amount)
+	req, err := http.NewRequest("GET", query, nil)
 	if err != nil {
 		return nil, err
 	}
